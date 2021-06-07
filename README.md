@@ -84,10 +84,10 @@ husdupflorin/web_service_status_to_influxdb
 
 Using this query you'll get the status for the `heimdall` service:
 
--   `SELECT "status" FROM "heimdall" WHERE $timeFilter`
+-   `SELECT last("status") FROM "heimdall" WHERE $timeFilter`
 
 In the grafana dashboard it should be used with a `stat` panel with the following settings:
 -   thesholds: `0 - red` / `1 - green`
 -   value mapping: `0: DOWN` / `1:UP`
 
-![Screenshot](https://i.imgur.com/YU5lwjy.png)
+![Screenshot](https://i.imgur.com/1aQXKwi.png)

@@ -33,7 +33,7 @@
       "type": "row"
     },
     {
-      "datasource": "servicestatus",
+      "datasource": "servicestatuses",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -65,6 +65,10 @@
               {
                 "color": "red",
                 "value": 0
+              },
+              {
+                "color": "green",
+                "value": 1
               }
             ]
           }
@@ -99,6 +103,8 @@
           "measurement": "duplicati",
           "orderByTime": "ASC",
           "policy": "default",
+          "query": "SELECT last(\"status\") FROM \"duplicati\" WHERE $timeFilter",
+          "rawQuery": true,
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -108,6 +114,10 @@
                   "status"
                 ],
                 "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
               }
             ]
           ],
@@ -120,7 +130,7 @@
       "type": "stat"
     },
     {
-      "datasource": "servicestatus",
+      "datasource": "servicestatuses",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -190,6 +200,8 @@
           "measurement": "heimdall",
           "orderByTime": "ASC",
           "policy": "default",
+          "query": "SELECT last(\"status\") FROM \"heimdall\" WHERE $timeFilter",
+          "rawQuery": true,
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -199,6 +211,10 @@
                   "status"
                 ],
                 "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
               }
             ]
           ],
@@ -211,7 +227,7 @@
       "type": "stat"
     },
     {
-      "datasource": "servicestatus",
+      "datasource": "servicestatuses",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -290,6 +306,10 @@
                   "status"
                 ],
                 "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
               }
             ]
           ],
@@ -302,7 +322,7 @@
       "type": "stat"
     },
     {
-      "datasource": "servicestatus",
+      "datasource": "servicestatuses",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -381,6 +401,10 @@
                   "status"
                 ],
                 "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
               }
             ]
           ],
@@ -393,7 +417,7 @@
       "type": "stat"
     },
     {
-      "datasource": "servicestatus",
+      "datasource": "servicestatuses",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -472,6 +496,10 @@
                   "status"
                 ],
                 "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
               }
             ]
           ],
@@ -491,12 +519,12 @@
     "list": []
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-5m",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
   "title": "Web Service Status",
   "uid": "M7WRBE6Gz",
-  "version": 2
+  "version": 3
 }
