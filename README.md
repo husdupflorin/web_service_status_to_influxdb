@@ -39,7 +39,7 @@ Portainer = http://10.13.14.200:9000
 Level = info
 ```
 
-## Usage withour docker
+## Usage without docker
 
 > Make sure you run it with Python 3.8
 
