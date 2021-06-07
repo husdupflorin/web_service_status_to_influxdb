@@ -1,0 +1,4 @@
+influxdb
+urllib3
+requests
+configparser
