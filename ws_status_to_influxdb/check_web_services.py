@@ -16,7 +16,6 @@ from ws_status_to_influxdb.common import log
 class WebServiceStatusToInfluxDB:
 
     def __init__(self):
-        pass
         self.influxdb_client = self._get_influx_connection()
 
     def run(self):
@@ -74,7 +73,6 @@ class WebServiceStatusToInfluxDB:
         """
         input_points = [{'measurement': result['service'],
                          'fields': {'status': result['status']}} for result in results]
-        print(input_points)
         log.debug("InfluxDB input points: {}".format(input_points))
         self._write_data_to_influxdb(input_points)
 
