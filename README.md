@@ -58,6 +58,7 @@ If you want to use a config file by a different name set an ENV Variable called 
 
 
 1. Make a directory to hold the config.ini file. Navigate to that directory and download the sample config.ini from this repo.
+
 ```bash
 mkdir ws_status_to_influxdb
 curl -o ws_status_to_influxdb/config.ini https://raw.githubusercontent.com/husdupflorin/web_service_status_to_influxdb/master/config.ini
@@ -65,11 +66,13 @@ cd ws_status_to_influxdb
 ```
 
 2. Modify the config as per your needs
+
 ```bash
 vi config.ini
 ```
 
 3. Run the container, pointing to the directory with the config file. This should now pull the image from Docker hub.
+
  ```bash
 docker run -d \
 --name="service_checker_influxdb" \
